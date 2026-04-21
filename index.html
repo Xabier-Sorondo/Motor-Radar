@@ -1,132 +1,83 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<title>MotorRadar</title>
+      from{opacity:0;transform:translateY(20px)}
+      to{opacity:1;transform:translateY(0)}
+    }
 
-<style>
-body {
-  margin: 0;
-  font-family: Arial;
-  background: #0b0f14;
-  color: white;
-}
-
-header {
-  padding: 20px;
-  text-align: center;
-  background: linear-gradient(90deg, #ff0000, #000);
-}
-
-h1 {
-  margin: 0;
-}
-
-.container {
-  padding: 20px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-}
-
-.card {
-  background: #121821;
-  padding: 20px;
-  border-radius: 15px;
-  border: 1px solid #1f2a38;
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  border-color: red;
-}
-
-.live {
-  color: #ff3b3b;
-  font-weight: bold;
-}
-
-.calendar-item {
-  margin: 10px 0;
-  padding: 10px;
-  background: #0f141c;
-  border-radius: 8px;
-}
-
-.news-item {
-  margin-bottom: 10px;
-}
-</style>
+    @media(max-width:768px){
+      .hero h1{font-size:38px;}
+      nav{display:none;}
+    }
+  </style>
 </head>
-
 <body>
 
 <header>
-  <h1>🏁 MotorRadar</h1>
-  <p>Centro del automovilismo mundial</p>
+  <div class="logo">MOTOR RADAR</div>
+  <nav>
+    <a href="#news">Noticias</a>
+    <a href="#calendar">Calendario</a>
+    <a href="#series">Series</a>
+  </nav>
 </header>
 
-<div class="container">
+<section class="hero">
+  <h1>Racing Intelligence Hub</h1>
+  <p>La plataforma moderna para seguir Fórmula 1, WEC, GT World Challenge y todo el motorsport mundial con diseño profesional e información clara.</p>
+  <button class="btn">Explorar ahora</button>
+</section>
 
-  <div class="grid">
+<section id="news">
+  <h2>Últimas Noticias</h2>
 
-    <!-- CAMPEONATOS -->
-    <div class="card">
-      <h2>🏎️ Campeonatos</h2>
-      <p>Fórmula 1</p>
-      <p>GT World Challenge</p>
-      <p>WEC</p>
-    </div>
-
-    <!-- CALENDARIO -->
-    <div class="card">
-      <h2>📅 Próximas carreras</h2>
-      <div class="calendar-item">Monza - 15 Sept</div>
-      <div class="calendar-item">Spa - 22 Sept</div>
-      <div class="calendar-item">Fuji - 6 Oct</div>
-    </div>
-
-    <!-- ESTADO -->
-    <div class="card">
-      <h2>🔴 Estado</h2>
-      <p class="live">F1: EN DIRECTO</p>
-      <p>GT: Próximamente</p>
-    </div>
-
-    <!-- NOTICIAS -->
-    <div class="card">
-      <h2>📰 Noticias</h2>
-      <div id="news">Cargando noticias...</div>
-    </div>
-
+  <div class="filters">
+    <button>Todo</button>
+    <button>F1</button>
+    <button>WEC</button>
+    <button>GTWC</button>
   </div>
 
-</div>
+  <div class="grid">
+    <div class="card">
+      <h3>F1: Lucha por el título</h3>
+      <p>La temporada entra en fase crítica con máxima tensión entre equipos líderes.</p>
+      <span class="tag">F1</span>
+    </div>
 
-<script>
-// NOTICIAS (modo demo)
-const newsContainer = document.getElementById("news");
+    <div class="card">
+      <h3>Le Mans 24h preparación</h3>
+      <p>Los prototipos híbridos llegan a su punto máximo de desarrollo.</p>
+      <span class="tag">WEC</span>
+    </div>
 
-const noticias = [
-  "Victoria en Fórmula 1 este fin de semana",
-  "Nuevo fichaje en Ferrari",
-  "Cambios importantes en el calendario WEC",
-  "Polémica en GT World Challenge"
-];
+    <div class="card">
+      <h3>GT World Challenge crecimiento</h3>
+      <p>Más fabricantes entran en la categoría GT3 global.</p>
+      <span class="tag">GTWC</span>
+    </div>
+  </div>
+</section>
 
-newsContainer.innerHTML = "";
+<section id="calendar">
+  <h2>Calendario</h2>
+  <div class="grid">
+    <div class="card"><h3>GP España</h3><p>Montmeló · Mayo</p></div>
+    <div class="card"><h3>Le Mans</h3><p>Francia · Junio</p></div>
+    <div class="card"><h3>Monza GTWC</h3><p>Italia · Julio</p></div>
+  </div>
+</section>
 
-noticias.forEach(n => {
-  let div = document.createElement("div");
-  div.className = "news-item";
-  div.innerText = "• " + n;
-  newsContainer.appendChild(div);
-});
-</script>
+<section id="series">
+  <h2>Campeonatos</h2>
+  <div class="grid">
+    <div class="card"><h3>Fórmula 1</h3><p>La élite del automovilismo mundial.</p></div>
+    <div class="card"><h3>WEC</h3><p>Resistencia y estrategia pura.</p></div>
+    <div class="card"><h3>GT World Challenge</h3><p>Batallas GT3 globales.</p></div>
+  </div>
+</section>
+
+<footer>
+  Motor Radar © 2026 · Designed for racing enthusiasts
+</footer>
 
 </body>
 </html>
