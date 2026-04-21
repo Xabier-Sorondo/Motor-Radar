@@ -1,83 +1,61 @@
 <!DOCTYPE html>
-      from{opacity:0;transform:translateY(20px)}
-      to{opacity:1;transform:translateY(0)}
-    }
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Motor Radar</title>
 
-    @media(max-width:768px){
-      .hero h1{font-size:38px;}
-      nav{display:none;}
-    }
-  </style>
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #0b0c10;
+  color: white;
+}
+
+header {
+  background: #111;
+  padding: 20px;
+  text-align: center;
+  font-size: 24px;
+  color: red;
+}
+
+section {
+  padding: 40px;
+}
+
+.card {
+  background: #1c1f26;
+  padding: 20px;
+  margin: 10px 0;
+  border-radius: 10px;
+}
+</style>
+
 </head>
+
 <body>
 
 <header>
-  <div class="logo">MOTOR RADAR</div>
-  <nav>
-    <a href="#news">Noticias</a>
-    <a href="#calendar">Calendario</a>
-    <a href="#series">Series</a>
-  </nav>
+  MOTOR RADAR
 </header>
 
-<section class="hero">
-  <h1>Racing Intelligence Hub</h1>
-  <p>La plataforma moderna para seguir Fórmula 1, WEC, GT World Challenge y todo el motorsport mundial con diseño profesional e información clara.</p>
-  <button class="btn">Explorar ahora</button>
+<section>
+  <h2>Noticias F1</h2>
+
+  <div class="card">Verstappen lidera el campeonato</div>
+  <div class="card">Ferrari mejora su rendimiento</div>
+  <div class="card">Mercedes prepara nuevas actualizaciones</div>
 </section>
 
-<section id="news">
-  <h2>Últimas Noticias</h2>
-
-  <div class="filters">
-    <button>Todo</button>
-    <button>F1</button>
-    <button>WEC</button>
-    <button>GTWC</button>
-  </div>
-
-  <div class="grid">
-    <div class="card">
-      <h3>F1: Lucha por el título</h3>
-      <p>La temporada entra en fase crítica con máxima tensión entre equipos líderes.</p>
-      <span class="tag">F1</span>
-    </div>
-
-    <div class="card">
-      <h3>Le Mans 24h preparación</h3>
-      <p>Los prototipos híbridos llegan a su punto máximo de desarrollo.</p>
-      <span class="tag">WEC</span>
-    </div>
-
-    <div class="card">
-      <h3>GT World Challenge crecimiento</h3>
-      <p>Más fabricantes entran en la categoría GT3 global.</p>
-      <span class="tag">GTWC</span>
-    </div>
-  </div>
-</section>
-
-<section id="calendar">
-  <h2>Calendario</h2>
-  <div class="grid">
-    <div class="card"><h3>GP España</h3><p>Montmeló · Mayo</p></div>
-    <div class="card"><h3>Le Mans</h3><p>Francia · Junio</p></div>
-    <div class="card"><h3>Monza GTWC</h3><p>Italia · Julio</p></div>
-  </div>
-</section>
-
-<section id="series">
+<section>
   <h2>Campeonatos</h2>
-  <div class="grid">
-    <div class="card"><h3>Fórmula 1</h3><p>La élite del automovilismo mundial.</p></div>
-    <div class="card"><h3>WEC</h3><p>Resistencia y estrategia pura.</p></div>
-    <div class="card"><h3>GT World Challenge</h3><p>Batallas GT3 globales.</p></div>
-  </div>
-</section>
 
-<footer>
-  Motor Radar © 2026 · Designed for racing enthusiasts
-</footer>
+  <div class="card">Fórmula 1</div>
+  <div class="card">WEC</div>
+  <div class="card">GT World Challenge</div>
+</section>
 
 </body>
 </html>
