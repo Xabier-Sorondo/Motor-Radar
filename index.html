@@ -2,60 +2,131 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Motor Radar</title>
+<title>MotorRadar</title>
 
 <style>
 body {
   margin: 0;
   font-family: Arial;
-  background: #0b0c10;
+  background: #0b0f14;
   color: white;
 }
 
 header {
-  background: #111;
   padding: 20px;
   text-align: center;
-  font-size: 24px;
-  color: red;
+  background: linear-gradient(90deg, #ff0000, #000);
 }
 
-section {
-  padding: 40px;
+h1 {
+  margin: 0;
+}
+
+.container {
+  padding: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
 }
 
 .card {
-  background: #1c1f26;
+  background: #121821;
   padding: 20px;
+  border-radius: 15px;
+  border: 1px solid #1f2a38;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: red;
+}
+
+.live {
+  color: #ff3b3b;
+  font-weight: bold;
+}
+
+.calendar-item {
   margin: 10px 0;
-  border-radius: 10px;
+  padding: 10px;
+  background: #0f141c;
+  border-radius: 8px;
+}
+
+.news-item {
+  margin-bottom: 10px;
 }
 </style>
-
 </head>
 
 <body>
 
 <header>
-  MOTOR RADAR
+  <h1>🏁 MotorRadar</h1>
+  <p>Centro del automovilismo mundial</p>
 </header>
 
-<section>
-  <h2>Noticias F1</h2>
+<div class="container">
 
-  <div class="card">Verstappen lidera el campeonato</div>
-  <div class="card">Ferrari mejora su rendimiento</div>
-  <div class="card">Mercedes prepara nuevas actualizaciones</div>
-</section>
+  <div class="grid">
 
-<section>
-  <h2>Campeonatos</h2>
+    <!-- CAMPEONATOS -->
+    <div class="card">
+      <h2>🏎️ Campeonatos</h2>
+      <p>Fórmula 1</p>
+      <p>GT World Challenge</p>
+      <p>WEC</p>
+    </div>
 
-  <div class="card">Fórmula 1</div>
-  <div class="card">WEC</div>
-  <div class="card">GT World Challenge</div>
-</section>
+    <!-- CALENDARIO -->
+    <div class="card">
+      <h2>📅 Próximas carreras</h2>
+      <div class="calendar-item">Monza - 15 Sept</div>
+      <div class="calendar-item">Spa - 22 Sept</div>
+      <div class="calendar-item">Fuji - 6 Oct</div>
+    </div>
+
+    <!-- ESTADO -->
+    <div class="card">
+      <h2>🔴 Estado</h2>
+      <p class="live">F1: EN DIRECTO</p>
+      <p>GT: Próximamente</p>
+    </div>
+
+    <!-- NOTICIAS -->
+    <div class="card">
+      <h2>📰 Noticias</h2>
+      <div id="news">Cargando noticias...</div>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+// NOTICIAS (modo demo)
+const newsContainer = document.getElementById("news");
+
+const noticias = [
+  "Victoria en Fórmula 1 este fin de semana",
+  "Nuevo fichaje en Ferrari",
+  "Cambios importantes en el calendario WEC",
+  "Polémica en GT World Challenge"
+];
+
+newsContainer.innerHTML = "";
+
+noticias.forEach(n => {
+  let div = document.createElement("div");
+  div.className = "news-item";
+  div.innerText = "• " + n;
+  newsContainer.appendChild(div);
+});
+</script>
 
 </body>
 </html>
